@@ -1,0 +1,32 @@
+array "test" 1
+fwd 0.015
+test[0]=75 
+log "test[0]""$irl""$ifl""$irfm""$irfr""$irr"
+wait 1
+test[0]=70
+fwd 0.1
+test[0]=65
+wait 1
+test[0]=60
+fwd 0.1
+test[0]=55
+wait 1
+test[0]=50 
+fwd 0.1
+test[0]=45
+wait 1
+test[0]=40 
+fwd 0.1
+test[0]=35
+wait 1
+test[0]=30 
+ignoreobstacles 
+fwd 0.1
+test[0]=25
+wait 1
+test[0]=20
+ignoreobstacles 
+fwd 0.1
+test[0]=15
+wait 1
+stop

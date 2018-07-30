@@ -1,0 +1,10 @@
+fwd .5
+turn 90
+drive :($irdistleft > 0.5)
+drive :($crossingblackline)
+followline "br" :($irdistfrontmiddle < .2)
+followline "br" :($crossingblackline)
+followline "br" :($irdistleft < .6)
+followline "wm" :($drivendist > 2.8)
+eval (-$odoy+$irdistfrontmiddle+.22) % returns x-distance for box
+stop

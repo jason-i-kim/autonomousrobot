@@ -1,0 +1,63 @@
+followline "br" :($irdistfrontmiddle < .2)
+eval (-$odoy+$irdistfrontmiddle+.22) 
+turn 90
+fwd .5
+drive :($crossingblackline)
+fwd .2
+turn -90
+ignoreobstacles
+followline "br" :($crossingblackline)
+ignoreobstacles
+fwd .2
+fwd -1
+turn -90
+ignoreobstacles
+fwd 0.6
+turn 90
+followline "br" :($crossingblackline)
+fwd .2
+turn 90
+followline "br" :($crossingblackline)
+fwd .2
+followline "br" :($crossingblackline)
+%.51, .53, .55
+followline "br" :($irdistleft<.6)
+fwd 0.45
+turn 90
+fwd .9
+turn -90
+drive :($crossingblackline)
+fwd .2
+turn 90
+followline "br" :($irdistleft < .6)
+fwd .6
+turn 90
+drive :($irdistleft > 0.5)
+fwd 0.4
+turn 90
+fwd .7
+turn 90
+drive :($crossingblackline)
+fwd .2
+turn 90
+followline "br" :($crossingblackline)
+fwd .4
+turn 90
+followline "wm" :($drivendist > 2.8)
+fwd .06
+followline "br" :($crossingblackline)
+fwd 1
+turn -90
+ignoreobstacles
+fwd 2.07
+turn -90
+fwd .27
+turn -90
+fwd 1.3
+turn 90
+drive :($crossingblackline)
+fwd .3
+fwd -.1
+turn 90
+followline "br" :($irdistfrontmiddle < .2)
+stop

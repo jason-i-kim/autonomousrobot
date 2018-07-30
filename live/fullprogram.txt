@@ -1,0 +1,86 @@
+% % 31385 - Autonomous Robot Systems
+% Group 17, Jason Kim s171333, Alvaro Ibanez s172307, Lars V. Jensen S113576, Daniel Blankestejner Jakobsen S113588
+% front: .22
+% sides: .12
+
+% Find box distance
+ignoreobstacles
+followline "br" @v0.2 :($irdistfrontmiddle < .2 )
+eval (-$odoy+$irdistfrontmiddle+.19) % returns x-distance for box
+
+% Move box in gate
+fwd -.3
+turn 80
+fwd 1.1
+turn -80
+ignoreobstacles
+fwd .2
+followline "br" @v0.2 :($irdistleft < .2 )
+ignoreobstacles
+followline "br" @v0.2 :($crossingblackline)
+ignoreobstacles
+fwd @v0.2 .1
+
+% go through first gate
+ignoreobstacles
+fwd -1.1
+turn -80
+ignoreobstacles
+fwd 0.7
+turn 80
+fwd 0.1
+followline "br" @v0.2 :($crossingblackline)
+fwd .2
+turn 80
+followline "br" :($crossingblackline)
+fwd 0.6
+turn -20
+
+%Go through walled moving gate
+followline "br" @v0.2 :($crossingblackline)
+fwd .2
+followline "br" :($crossingblackline)
+fwd .2
+turn 80
+followline "br" @v0.2 :($irdistleft < .3 )
+fwd .6
+turn 85
+fwd .8
+drive  @v0.1 :($irdistleft > 0.7 )
+fwd @v0.2 0.4
+turn 80
+drive :($crossingblackline)
+fwd .2
+turn 80
+followline "br" :($crossingblackline)
+fwd .2
+turn 80
+followline "br" :($crossingblackline)
+
+%Go through white line
+ignoreobstacles
+fwd 0.4
+turn 90
+ignoreobstacles
+followline "wm" @v0.1
+%turn -12
+ignoreobstacles
+fwd @v0.1 .3 
+turn -80
+
+% Go into gate 
+followline "br" @v0.2 :($irdistfrontmiddle < .2 )
+turn 80
+fwd 0.7
+turn -80
+ignoreobstacles
+fwd  .4
+turn @v0.4 -150
+ignoreobstacles
+fwd @v0.2 .4
+turn 75
+ignoreobstacles
+fwd .5
+turn 70
+fwd 0.1
+followline "br" :($irdistfrontmiddle < .2 )

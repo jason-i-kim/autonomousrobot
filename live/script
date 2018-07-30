@@ -1,0 +1,95 @@
+% Find box distance
+followline "br" @v0.2 :($irdistfrontmiddle < .2)
+wait 2
+eval (-$odoy+$irdistfrontmiddle+.11) % returns x-distance for box
+
+% Move box in gate
+fwd -.3
+turn 90
+fwd 1.1
+turn -90
+ignoreobstacles
+fwd .3
+ignoreobstacles
+%followline "bm" @v0.3 :($odoy < -2)
+%ignoreobstacles
+%followline "bm" @v0.3 :($drivendist > .65)
+followline "bm" @v0.2 :($crossingblackline)
+ignoreobstacles
+fwd .1
+ignoreobstacles
+fwd -1.1
+turn -93
+ignoreobstacles
+drive :($blacklinefound)
+ignoreobstacles
+fwd .2
+turn 90
+followline "bm" @v0.2 :($crossingblackline)
+fwd .2
+turn 90
+followline "bm" :($crossingblackline)
+%fwd .2
+% go through moving gate
+%followline "br" @v0.15 :($crossingblackline)
+%fwd .2
+
+fwd 1.8
+turn -90
+fwd .3
+turn 90
+
+followline "bm" @v0.2 :($crossingblackline)
+fwd .4
+turn 180
+fwd .1
+followline "bm" @v0.05 :($irdistright<.57)
+eval $irdistright
+ignoreobstacles
+followline "bm" @v0.2 :($drivendist > .5)
+turn -93
+ignoreobstacles
+fwd .75
+turn -93
+
+% go through variable gate
+drive :($blacklinefound)
+drive @v0.2 :($drivendist > .13)
+turn 90
+followline "bm" :($drivendist > .6)
+turn 90
+fwd 1
+drive @v0.1 :($irdistleft > 0.6)
+fwd 0.35
+turn 90
+
+fwd .8
+fwd -1
+turn -92
+
+drive @v0.3 :($blacklinefound)
+fwd .2
+turn -90
+
+% open garage gate and park
+followline "bm" @v0.2 :($irdistfrontmiddle < .2)
+turn 90
+fwd .7
+turn -90
+fwd .8
+turn -90
+ignoreobstacles
+fwd .13
+turn -90
+ignoreobstacles
+fwd .84
+ignoreobstacles
+turn -97
+fwd -1.1
+drive :($blacklinefound)
+fwd .2
+turn -90
+followline "bm" :($irdistfrontmiddle < .2)
+
+stop
+

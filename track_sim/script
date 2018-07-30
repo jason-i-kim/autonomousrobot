@@ -1,0 +1,33 @@
+turn 90
+followline "br" :($crossingblackline)
+fwd .4
+turn 90
+followline "wm" @v0.1 :($drivendist > 2.8)
+fwd .1
+followline "br" @v0.2 :($crossingblackline)
+fwd .2
+turn -90
+followline "br" @v0.2 :($irdistfrontmiddle < .2)
+turn 90
+fwd 1.2
+turn -90
+fwd 1
+turn -90
+ignoreobstacles
+fwd .3
+turn -90
+ignoreobstacles
+fwd 1.2
+ignoreobstacles
+fwd -.1
+turn 90
+ignoreobstacles
+drive :($crossingblackline)
+ignoreobstacles
+fwd .3
+ignoreobstacles
+fwd -.1
+turn 90
+ignoreobstacles
+followline "br" :($irdistfrontmiddle < .2)
+stop
